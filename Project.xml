@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin': After The Year" file="Return Of Garcello" packageName="com.kadedev.kadeengine" package="com.kadedev.kadeengine" main="Main" version="0.2.7.1" company="kadedev" />
+	<app title="Friday Night Funkin': After The Year" file="Return Of Garcello" packageName="com.kadedev.garcelloreturn" package="com.kadedev.garcelloreturn" main="Main" version="0.2.7.1" company="kadedev" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -27,7 +27,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
@@ -113,15 +113,14 @@
 	<haxelib name="hscript" />
 
 	<haxelib name="actuate" />
-	<haxelib name="extension-webm"/> <!-- Make sure to use https://github.com/KadeDev/extension-webm/ -->
+	<haxelib name="hxCodec"/> <!-- Make sure to use https://github.com/KadeDev/extension-webm/ -->
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
-	<haxelib name="newgrounds"/>
 	<haxelib name="faxe" if='switch'/>
-	<haxelib name="polymod"/>
 	<haxelib name="discord_rpc" if="windows"/>
-	<haxelib name="linc_luajit" if="windows"/>
+	<haxelib name="linc_luajit" if="windows || mobile"/>
+  <haxelib name="extension-androidtools" if="mobile" />
 
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
@@ -174,10 +173,6 @@
 	<icon path="art/icon128.png" size='128'/>
 	<icon path="art/icon256.png" size='256'/>
 	<icon path="art/icon512.png" size='512'/>
-	<icon path="art/iconOG.png" />
-
-
-	<!-- <haxedef name="SKIP_TO_PLAYSTATE" if="debug" /> -->
-	<haxedef name="NG_LOGIN" if="newgrounds" />
+	<icon path="art/iconOG.png" />  
 	
 </project>
